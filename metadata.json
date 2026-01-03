@@ -1,0 +1,8 @@
+{
+  "name": "Simran Shaikh - AI Portfolio",
+  "description": "A stunning, modern AI-powered developer portfolio for Simran Shaikh, featuring a Google Gemini AI chat assistant and interactive showcase of AI/ML projects.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
