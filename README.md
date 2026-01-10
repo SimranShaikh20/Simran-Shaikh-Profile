@@ -1,42 +1,20 @@
+
 # Simran Shaikh Portfolio - AI Powered 🚀
 
-A modern, stunning developer portfolio designed for the DEV.to "New Year, New You" challenge. This application showcases technical expertise in AI/ML and software engineering through a text-focused, high-aesthetic interface and an integrated Google Gemini AI assistant.
+A modern, stunning developer portfolio designed for the DEV.to "New Year, New You" challenge.
 
-## ✨ Key Features
+## 🚀 Instant Deployment (Netlify)
 
-- **AI Chat Assistant**: A persistent, intelligent chat interface powered by **Google Gemini 2.0 Flash**. It provides personalized answers about Simran's background, projects, and achievements.
-- **Modern UI Design**: Image-free project gallery using high-quality gradients, glassmorphism, and subtle animations for a professional developer aesthetic.
-- **Dynamic Experience Timeline**: Interactive professional journey highlighting roles at Keshav Encon and GirlScript Summer of Code.
-- **Optimized for Mobile**: Fully responsive navigation and layout for a seamless experience on any device.
-- **Instant Resume Access**: Quick-download formatted text resume for recruiters.
+1. **Build the project locally**: `npm run build`
+2. **Go to [Netlify Drop](https://app.netlify.com/drop)**.
+3. **Drag and drop the `dist` folder** into the browser.
+4. **Set your API Key**: Go to Site Settings -> Environment Variables and add `API_KEY` with your Gemini API key.
 
 ## 🛠️ Tech Stack
-
-- **Framework**: React 18 & TypeScript
-- **Styling**: Tailwind CSS (Custom glassmorphism & gradients)
-- **AI Engine**: Google Gemini API (@google/genai)
-- **Icons**: Lucide React
-- **Build Tool**: Vite
-
-## 🚀 Getting Started
-
-1. **Clone the project**
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Configure Environment**:
-   Ensure `process.env.API_KEY` is available with your Google AI Studio API key.
-4. **Run Development Server**:
-   ```bash
-   npm run dev
-   ```
-
-## 📬 Contact
-
-- **Email**: shaikhsimran20.2003@gmail.com
-- **LinkedIn**: [simran-shaikh-39207a23b](https://www.linkedin.com/in/simran-shaikh-39207a23b)
-- **GitHub**: [SimranShaikh20](https://github.com/SimranShaikh20)
+- React 18 & TypeScript
+- Tailwind CSS
+- Google Gemini API
+- Vite
 
 ---
 Built with ❤️ by Simran Shaikh using Google AI.

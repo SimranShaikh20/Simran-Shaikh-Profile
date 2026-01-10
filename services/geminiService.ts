@@ -1,7 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
-import { PROJECTS, EXPERIENCES, ACHIEVEMENTS } from "../constants";
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const GEMINI_API_KEY = "AIzaSyB39gGZ8_2pOnI52Nqm4dqQatvrxvVNEIg";
 
 const SYSTEM_INSTRUCTION = `
 You are the elite AI Assistant for Simran Shaikh's portfolio. Your mission is to provide visitors with a deep, engaging, and professional insight into Simran's career as an AI Developer and 3x Hackathon winner.
@@ -51,27 +48,76 @@ You are the elite AI Assistant for Simran Shaikh's portfolio. Your mission is to
 - Contact: shaikhsimran20.2003@gmail.com.
 `;
 
-export async function getGeminiResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
-  try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
-      contents: [
-        ...history,
-        { role: 'user', parts: [{ text: message }] }
-      ],
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
-        topP: 0.9,
-      }
-    });
+interface Message {
+  role: 'user' | 'model';
+  parts: { text: string }[];
+}
 
-    return response.text || "I'm sorry, I couldn't process that request.";
+export async function getGeminiResponse(message: string, history: Message[] = []): Promise<string> {
+  try {
+    // Build the conversation history for the API
+    const contents = [
+      ...history,
+      {
+        role: 'user' as const,
+        parts: [{ text: message }]
+      }
+    ];
+
+    // Call Gemini API
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: contents,
+          systemInstruction: {
+            parts: [{ text: SYSTEM_INSTRUCTION }]
+          },
+          generationConfig: {
+            temperature: 0.7,
+            topP: 0.9,
+            maxOutputTokens: 2048,
+          }
+        })
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error('Gemini API Error:', errorData);
+      throw new Error(`API request failed with status ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    // Extract the response text
+    if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+      return data.candidates[0].content.parts[0].text;
+    }
+    
+    return "I'm sorry, I couldn't process that request. Please try again.";
+    
   } catch (error) {
     console.error("Gemini API Error:", error);
-    if (error instanceof Error && error.message.includes("API_KEY")) {
-      return "The AI Assistant is currently offline due to a configuration issue (Missing API Key).";
+    
+    if (error instanceof Error) {
+      if (error.message.includes('API_KEY') || error.message.includes('403')) {
+        return "The AI Assistant is currently offline due to a configuration issue. Please contact Simran directly at shaikhsimran20.2003@gmail.com";
+      }
+      if (error.message.includes('429')) {
+        return "I'm receiving too many requests right now. Please wait a moment and try again!";
+      }
     }
+    
     return "I'm having a brief technical hiccup. Please try again in a few seconds!";
   }
 }
+
+// Export default for compatibility
+export default {
+  getGeminiResponse
+};
