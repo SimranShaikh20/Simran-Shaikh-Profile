@@ -77,28 +77,41 @@ export const PROJECTS: Project[] = [
   }
 ];
 
-export const EXPERIENCES: Experience[] = [
+
+export const EXPERIENCES = [
   {
-    id: 'exp1',
-    role: 'Web Scraping Intern',
-    company: 'Keshav Encon',
-    period: 'Jun 2024 – Feb 2025',
+    id: 1,
+    role: "AI / ML Intern",
+    company: "Atlas Copco",
+    period: "Jan 2025 - Present",
+    location: "On-site (Pune)",
     points: [
-      'Designed scalable scraping workflows using Python, BeautifulSoup, and Scrapy.',
-      'Automated pipelines, reducing manual data collection efforts by 60%.',
-      'Integrated REST APIs, HTML parsers, and advanced XPath filters.',
-      'Implemented Pandas/NumPy for deep data analysis and transformation.'
+      "Implementing ResNet-based transfer learning models for industrial defect detection, achieving 90%+ classification accuracy through fine-tuning and hyperparameter optimization using PyTorch",
+      "Developed autoencoder models for anomaly detection, reducing feature dimensionality by 65% while maintaining reconstruction quality for efficient defect identification in manufacturing processes",
+      "Engineered automated data augmentation pipelines using tqdm, expanding training datasets by 3x through geometric transformations and synthetic generation, reducing labeling errors by 30%"
     ]
   },
   {
-    id: 'exp2',
-    role: 'Open Source Contributor (Top 5%)',
-    company: 'GSSoC Extended',
-    period: 'Oct 2024 – Nov 2024',
+    id: 2,
+    role: "Web Scraping Intern",
+    company: "Keshav Encon",
+    period: "Jun 2024 - Feb 2025",
+    location: "Remote",
     points: [
-      'Contributed to ML pipeline optimization & data processing repositories.',
-      'Ranked among the Top 5% of 7000+ contributors globally.',
-      'Collaborated via Git and improved code quality through systematic PR reviews.'
+      "Developed scalable web scraping pipelines with Python, BeautifulSoup, and Scrapy to extract structured data from high-traffic websites",
+      "Processed scraped data using Pandas and NumPy, delivering actionable insights that informed management decisions and enabled data-driven strategy",
+      "Automated extraction workflows, reducing manual data collection by 60% with scheduled deployment scripts and logging tools"
+    ]
+  },
+  {
+    id: 3,
+    role: "Open Source Contributor (Top 5% globally)",
+    company: "GirlScript Summer of Code (GSSoC Extended)",
+    period: "Oct 2024 - Nov 2024",
+    location: "Remote",
+    points: [
+      "Contributed code to improve machine learning modules and data pipelines in open repositories, collaborating via Git and reviewing pull requests",
+      "Ranked in the top 5% of over 7,000 contributors, demonstrating strong software engineering and collaboration skills with continuous engagement"
     ]
   }
 ];

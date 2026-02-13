@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
           <form onSubmit={handleSubmit} className="glass-card p-10 rounded-3xl space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-500 uppercase ml-1">Your Name</label>
+                <label className="text-xs font-bold text-gray-500 uppercase ml-1">Simran Shaikh</label>
                 <input 
                   type="text" 
                   required
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-500 uppercase ml-1">Your Email</label>
+                <label className="text-xs font-bold text-gray-500 uppercase ml-1">shaikhsimran20.2003@gmail.com</label>
                 <input 
                   type="email" 
                   required
