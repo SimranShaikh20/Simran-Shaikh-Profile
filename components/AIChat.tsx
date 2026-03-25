@@ -50,7 +50,7 @@ const AIChat: React.FC<AIChatProps> = ({ isOpen, setIsOpen }) => {
       parts: [{ text: m.content }]
     }));
 
-    const aiResponse = await getGeminiResponse(content, history);
+    const aiResponse = await getGeminiResponse(content);
     
     const assistantMessage: Message = { 
       role: 'assistant', 
