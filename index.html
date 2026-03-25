@@ -3,7 +3,7 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Simran Shaikh | AI Agent & LLM Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,16 @@
         --bg: #030014;
       }
 
-      body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: var(--bg);
-        color: #fff;
-        overflow-x: hidden;
-      }
+      html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;              /* ✅ ADD THIS */
+  -webkit-text-size-adjust: 100%;
+}
 
       h1, h2, h3, h4 {
         font-family: 'Outfit', sans-serif;

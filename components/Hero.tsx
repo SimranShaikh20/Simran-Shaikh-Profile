@@ -86,7 +86,7 @@ HONORS & RECOGNITION
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 px-4 sm:px-6 overflow-hidden overflow-x-hidden">
       {/* Aurora Effects */}
       <div className="aurora-glow bg-purple-600/20 top-[-10%] left-[-10%] [animation-delay:0s]"></div>
       <div className="aurora-glow bg-indigo-600/10 bottom-[-10%] right-[-10%] [animation-delay:5s]"></div>
@@ -106,35 +106,59 @@ HONORS & RECOGNITION
 
         {/* Title Area */}
         <div className="space-y-6 relative group">
-          <h2 className="text-gray-500 text-lg font-bold tracking-[0.4em] uppercase mb-[-10px]">Architecting with AI</h2>
-          <h1 className="text-6xl md:text-[10rem] font-black tracking-tighter leading-[0.85]">
-            <span className="text-white">SIMRAN</span><br />
-            <span className="gradient-text drop-shadow-[0_0_40px_rgba(167,139,250,0.4)]">SHAIKH</span>
-          </h1>
+          <h2 className="text-gray-500 text-sm sm:text-base font-bold tracking-[0.35em] uppercase mb-[-10px]">Architecting with AI</h2>
+
+          {/* Name LEFT, Image RIGHT */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
+
+            {/* Name — LEFT on desktop */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] xl:text-[9rem] 2xl:text-[10rem] font-black tracking-tighter leading-[1.05] sm:leading-[1.0] md:leading-[0.95]">
+              <span className="text-white">SIMRAN</span><br />
+              <span className="gradient-text drop-shadow-[0_0_40px_rgba(167,139,250,0.4)]">SHAIKH</span>
+            </h1>
+
+            {/* Profile Image — RIGHT on desktop */}
+            <div className="relative flex-shrink-0">
+              {/* Outer animated glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600 via-violet-500 to-indigo-600 blur-2xl opacity-50 scale-110 animate-pulse"></div>
+              {/* Gradient border ring */}
+              <div className="relative p-[4px] rounded-full bg-gradient-to-tr from-purple-600 via-violet-400 to-indigo-500 shadow-[0_0_50px_rgba(139,92,246,0.6)]">
+                {/* Dark gap ring */}
+                <div className="p-[3px] rounded-full bg-[#0a0a14]">
+                  <img
+                    src="/profile.png"
+                    alt="Simran Shaikh"
+                    className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
           
-          <div className="h-10 md:h-14 overflow-hidden mt-4">
-            <p className="text-xl md:text-3xl text-gray-400 font-semibold tracking-tight">
-              {tagline}<span className="inline-block w-[4px] h-8 md:h-10 bg-purple-500 ml-2 align-middle animate-pulse"></span>
+          <div className="min-h-[3.25rem] sm:min-h-[4rem] md:min-h-[4.5rem] overflow-hidden mt-4 w-full">
+            <p className="text-base sm:text-xl md:text-2xl text-gray-400 font-semibold tracking-tight leading-[1.2] sm:leading-[1.18] md:leading-tight break-words whitespace-normal">
+              {tagline}<span className="inline-block w-[4px] h-7 sm:h-8 md:h-10 bg-purple-500 ml-2 align-middle animate-pulse"></span>
             </p>
           </div>
 
-          <p className="text-gray-500 max-w-3xl mx-auto text-lg md:text-2xl leading-relaxed mt-6 font-medium">
+          <p className="text-gray-300 max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-7 sm:leading-8 md:leading-9 mt-8 font-medium break-words">
             Building specialized <span className="text-white border-b-2 border-purple-500/30">AI Agents</span> that think, code, and automate at scale. 3x Hackathon Champion focused on LLM orchestration.
           </p>
         </div>
 
         {/* Action Controls */}
-        <div className="flex flex-col sm:flex-row gap-5 mt-14 w-full sm:w-auto">
-          <a href={hireMeUrl} className="group px-12 py-5 bg-white text-black hover:bg-purple-600 hover:text-white rounded-2xl font-black text-sm uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-500 transform hover:scale-105 shadow-[0_25px_50px_-15px_rgba(255,255,255,0.2)] hover:shadow-purple-600/50 active:scale-95">
-            <Mail className="w-5 h-5" /> Hire Me <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        <div className="flex flex-col sm:flex-row gap-4 mt-14 w-full sm:w-auto">
+          <a href={hireMeUrl} className="group px-6 sm:px-10 py-3 sm:py-4 bg-white text-black hover:bg-purple-600 hover:text-white rounded-2xl font-black text-xs sm:text-sm uppercase tracking-widest flex items-center justify-center gap-2 sm:gap-3 transition-all duration-500 transform hover:scale-105 shadow-[0_18px_40px_-15px_rgba(255,255,255,0.2)] hover:shadow-purple-600/50 active:scale-95">
+            <Mail className="w-4 h-4" /> Hire Me <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
-          <div className="flex gap-3 w-full sm:w-auto">
-            <a href="#projects" className="flex-1 sm:flex-initial px-10 py-5 glass hover:bg-white/10 text-white rounded-2xl font-black text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-all transform hover:scale-105 border border-white/5 shadow-xl">
+          <div className="flex gap-2 sm:gap-3 w-full sm:w-auto">
+            <a href="#projects" className="flex-1 sm:flex-initial px-4 sm:px-10 py-3 sm:py-5 glass hover:bg-white/10 text-white rounded-2xl font-black text-xs sm:text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-all transform hover:scale-105 border border-white/5 shadow-xl">
               <Layers className="w-5 h-5" /> Projects
             </a>
             <button 
               onClick={handleDownloadResume}
-              className="px-8 py-5 glass hover:bg-white/10 text-white rounded-2xl font-bold flex items-center justify-center transition-all border border-white/5 active:scale-90"
+              className="px-4 sm:px-8 py-3 sm:py-5 glass hover:bg-white/10 text-white rounded-2xl font-bold flex items-center justify-center text-xs sm:text-sm transition-all border border-white/5 active:scale-90"
               title="Download Resume"
             >
               <Download className="w-6 h-6" />

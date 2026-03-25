@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ACHIEVEMENTS } from '../constants';
 import { Award, Star, Github } from 'lucide-react';
@@ -26,8 +25,9 @@ const Achievements: React.FC = () => {
           ))}
         </div>
 
-        {/* GitHub Stats Mockup */}
+        {/* GitHub Stats Section */}
         <div className="glass-card p-8 rounded-3xl overflow-hidden relative">
+          {/* Header */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-purple-400">
@@ -47,19 +47,69 @@ const Achievements: React.FC = () => {
               </div>
             </div>
           </div>
-          
-          <div className="grid grid-cols-7 sm:grid-cols-14 md:grid-cols-21 lg:grid-cols-28 gap-1.5 opacity-60">
-            {Array.from({ length: 140 }).map((_, i) => (
-              <div 
-                key={i} 
-                className={`w-full aspect-square rounded-sm ${
-                  Math.random() > 0.6 ? (Math.random() > 0.8 ? 'bg-purple-600' : 'bg-purple-800') : 'bg-white/5'
-                }`}
-              ></div>
-            ))}
+
+          {/* Row 1: GitHub Stats + Top Languages */}
+          <div className="flex flex-col md:flex-row gap-4 mb-4 items-center justify-center">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=SimranShaikh20&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=00000000&title_color=a78bfa&icon_color=a78bfa&text_color=cbd5e1"
+              alt="Simran's GitHub Stats"
+              className="rounded-xl w-full md:w-1/2 object-contain"
+              loading="lazy"
+            />
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=SimranShaikh20&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=a78bfa&text_color=cbd5e1"
+              alt="Top Languages"
+              className="rounded-xl w-full md:w-1/2 object-contain"
+              loading="lazy"
+            />
           </div>
-          
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent pointer-events-none"></div>
+
+          {/* Row 2: Contribution Streak */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="https://streak-stats.demolab.com/?user=SimranShaikh20&theme=tokyonight&hide_border=true&background=00000000&ring=a78bfa&fire=a78bfa&currStreakLabel=a78bfa&sideLabels=cbd5e1&dates=94a3b8&currStreakNum=ffffff&sideNums=ffffff"
+              alt="GitHub Streak Stats"
+              className="rounded-xl w-full max-w-2xl object-contain"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Row 3: Contribution Activity Graph */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="https://github-readme-activity-graph.vercel.app/graph?username=SimranShaikh20&theme=tokyo-night&area=true&hide_border=true&bg_color=00000000&color=a78bfa&line=a78bfa&point=ffffff"
+              alt="GitHub Activity Graph"
+              className="rounded-xl w-full object-contain"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Row 4: GitHub Contribution Calendar Heatmap */}
+          <div className="w-full bg-white/5 rounded-2xl p-5">
+            <div className="flex items-center gap-2 text-purple-400 mb-4">
+              <Github className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-widest">603 Contributions in the Last Year</span>
+            </div>
+            <img
+              src="https://ghchart.rshah.org/a78bfa/SimranShaikh20"
+              alt="Simran's GitHub Contribution Calendar"
+              className="w-full rounded-xl object-contain"
+              loading="lazy"
+            />
+            <div className="flex justify-end items-center gap-2 mt-3">
+              <span className="text-[10px] text-gray-500">Less</span>
+              <div className="flex gap-1">
+                <div className="w-3 h-3 rounded-sm bg-white/10"></div>
+                <div className="w-3 h-3 rounded-sm bg-purple-900"></div>
+                <div className="w-3 h-3 rounded-sm bg-purple-700"></div>
+                <div className="w-3 h-3 rounded-sm bg-purple-500"></div>
+                <div className="w-3 h-3 rounded-sm bg-purple-400"></div>
+              </div>
+              <span className="text-[10px] text-gray-500">More</span>
+            </div>
+          </div>
+
+          {/* Footer note */}
           <div className="relative z-10 text-center mt-6">
             <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
               <Star className="w-3 h-3 text-yellow-500" /> Starstruck & Pull Shark x2 Achievement Holder
