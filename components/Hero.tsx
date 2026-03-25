@@ -167,7 +167,7 @@ HONORS & RECOGNITION
         </div>
 
         {/* Social Bar */}
-        <div className="flex gap-5 mt-20">
+       <div className="flex gap-5 mt-20 mb-20">
           {SOCIAL_LINKS.map((link) => (
             <a 
               key={link.name} 
