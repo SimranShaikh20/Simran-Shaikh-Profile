@@ -14,17 +14,66 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
+  // ── Flagship projects from resume ──────────────────────────
+  {
+    id: 'sentinel-rag',
+    title: 'SentinelRAG',
+    description:
+      'Production-hardened RAG API with an instruction-hierarchy guardrail blocking 95%+ prompt-injection attempts, plus circuit-breaker fallback and full tracing/eval via LangSmith. Cut p95 latency 45% (2.1s → 1.15s) and tokens/request 35% through caching and streaming, scaling to 50+ req/sec.',
+    category: 'AI/ML',
+    tech: ['Python', 'FastAPI', 'LangChain', 'Redis', 'LangSmith'],
+    // TODO: add your real repo URL
+    github: undefined,
+  },
+  {
+    id: 'hsn-classifier',
+    title: 'HSN Classifier',
+    description:
+      'PDF-grounded HTS trade-compliance navigator built for Atlas Copco. Uses zero-hallucination code-prefix tree traversal (Chapter → Heading → Subheading → Tariff line) sourced verbatim from HTS & GRI PDFs, invoking the LLM only for GRI 1–6 disambiguation, with a full audit trail for compliance traceability.',
+    category: 'AI/ML',
+    tech: ['Python', 'Streamlit', 'Azure OpenAI', 'pdfplumber'],
+    github: undefined,
+  },
   {
     id: 'multi-agent-code-review',
     title: 'Multi-Agent Code Review',
     description:
-      '4 specialized AI agents analyze code simultaneously in isolated database forks (Tiger Cloud), then merge findings into a comprehensive review — all in seconds. A genuinely novel parallel-agent architecture, not just a wrapper.',
+      'Orchestrated 4 autonomous AI agents (Quality, Security, Performance, Documentation) running in parallel with human-in-the-loop gates via TigerDB zero-copy database forks, achieving 4× faster analysis (40s → 10s). 1st place, Agentic Postgres Challenge.',
     category: 'AI/ML',
-    tech: ['Python', 'TigerData', 'Multi-Agent', 'Claude API', 'FastAPI'],
+    tech: ['TypeScript', 'React', 'PostgreSQL', 'TigerDB', 'LLM Agents'],
     github: 'https://github.com/SimranShaikh20/multi-agent-code-review',
     stars: 12,
     forks: 4,
   },
+  {
+    id: 'casting-defect-detection',
+    title: 'Casting Defect Detection',
+    description:
+      'Built and published a novel 12-class industrial casting-defect image dataset — the only publicly available multi-class version of this benchmark. Trained a ResNet-50 + EfficientNet-B3 ensemble with MixUp/CutMix augmentation and Test-Time Augmentation (TTA), cross-validated to 90%+ accuracy.',
+    category: 'AI/ML',
+    tech: ['Python', 'PyTorch', 'ResNet-50', 'EfficientNet-B3', 'OpenCV'],
+    github: undefined,
+  },
+  {
+    id: 'credit-risk-scoring',
+    title: 'Credit Risk Scoring',
+    description:
+      'End-to-end tabular-ML pipeline comparing Logistic Regression, Random Forest, and XGBoost via RandomizedSearchCV with full MLflow experiment tracking, selecting the best model at 0.70 ROC-AUC. Served through a Dockerized FastAPI microservice at ~20ms p50 latency, with a KS-test/PSI drift monitor and a GitHub Actions CI/CD pipeline gating automated retraining.',
+    category: 'AI/ML',
+    tech: ['Python', 'scikit-learn', 'XGBoost', 'MLflow', 'FastAPI', 'Docker'],
+    github: undefined,
+  },
+  {
+    id: 'churnguard',
+    title: 'ChurnGuard',
+    description:
+      'Explainable ensemble churn-prediction engine: a stacked model (XGBoost + Random Forest + Logistic Regression) on 50,000+ customer records with 40+ engineered features, SMOTE-based imbalance handling, and Optuna-driven tuning — achieving 0.94 ROC-AUC (vs. 0.81 baseline) and a 23% F1 improvement. Deployed as a Dockerized FastAPI microservice, cutting manual risk-review time 35%.',
+    category: 'AI/ML',
+    tech: ['Python', 'scikit-learn', 'XGBoost', 'SHAP', 'FastAPI', 'Docker'],
+    github: undefined,
+  },
+
+  // ── Other real projects already on your GitHub ─────────────
   {
     id: 'repomind-ai',
     title: 'RepoMind AI',
@@ -74,9 +123,9 @@ const PROJECTS: Project[] = [
     id: 'seo-insighthub',
     title: 'SEO InsightHub',
     description:
-      'Delivers comprehensive audits, competitive analysis, and prioritized action plans with measurable outcomes — increasing organic traffic by 25–40% through AI-powered recommendations.',
+      'Streamlit app using the Agno agent framework with Groq, Firecrawl, and Exa for AI-powered SEO audits — delivering comprehensive audits, competitive analysis, and prioritized action plans with measurable outcomes.',
     category: 'Web Dev',
-    tech: ['Next.js', 'Python', 'OpenAI', 'Scrapy', 'PostgreSQL'],
+    tech: ['Streamlit', 'Agno', 'Groq', 'Firecrawl', 'Exa'],
     github: 'https://github.com/SimranShaikh20/SEO-InsightHub',
     stars: 9,
     forks: 3,
